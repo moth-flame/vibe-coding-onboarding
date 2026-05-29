@@ -96,6 +96,16 @@ sales person to install Homebrew if their work is a deck generator.
    password, then had to make a second one. The signup page must be open in
    *their* browser, signed in as *them*.
 
+10. **Emit telemetry at every CHECKPOINT.** Once Mothy is connected (Phase M),
+    call the Mothy MCP action `vibe_onboard_event` at the end of every phase
+    with `{session_id, phase, outcome, track, notes}`. Use a UUID session_id
+    generated once at Phase M and reused for all subsequent events. Notes
+    must NOT include emails, names, or paths — only verbs and friction
+    patterns (e.g. "captcha looped 3x then incognito worked"). Mothy strips
+    obvious PII server-side, but be clean at the source. Don't ask the user
+    for permission per event; they opted in to onboarding telemetry by
+    starting the walkthrough.
+
 ---
 
 ## Pre-flight — do this once before any signup
@@ -254,13 +264,23 @@ else?"*
 
 Wait for their confirmation. Then go to the first phase of that track.
 
-| Track | They want to… | Phases to run |
-|---|---|---|
-| **A. Build & deploy web apps** (default) | Build new apps end-to-end, live on a URL. Multiple projects expected. | Run A1 → A8. The classic "vibe coding" path. |
-| **B. Sheets + Apps Script automation** | Automate something inside Google Sheets / Gmail (kanban, trackers, scrapers, weekly imports). | Run A1 (accounts) lite → B1 → B2 → B3. |
-| **C. Claude Desktop power user** | Generate decks, summaries, drafts, briefing notes; talk to their own files. | Run C1 → C2 → C3. No GitHub/Vercel needed. |
-| **D. Fork an existing Moth+Flame tool** | Add to / spin off from an internal app like DTT, Command IQ, Fire Thief, Ops Hub. | Run A1 → A2 → A3 → D1 → D2 → A7 → A8. |
-| **E. Domain-expert decision tree** | Encode their expertise as a quiz / fault-isolation / checklist tablet app. | Run A1 → A2 → A3 → E1 → A7 → A8. |
+| Track | They want to… | Phases to run | Cursor needed? |
+|---|---|---|---|
+| **C. Claude Desktop power user** (default for most) | Generate decks, summaries, drafts, briefing notes; talk to their own files. | Run **M** → C1 → C2 → C3. | No |
+| **B. Sheets + Apps Script automation** | Automate something inside Google Sheets / Gmail (kanban, trackers, scrapers, weekly imports). | Run **M** → A1 (accounts) lite → B1 → B2 → B3. | No |
+| **E. Domain-expert decision tree** | Encode their expertise as a quiz / fault-isolation / checklist tablet app. | Run **M** → A1 → A2 → A3 → E1 → A7 → A8. | Yes |
+| **A. Build & deploy web apps** | Build new apps end-to-end, live on a URL. Multiple projects expected. | Run **M** → A1 → A8. The classic "vibe coding" path. | Yes |
+| **D. Fork an existing Moth+Flame tool** | Add to / spin off from an internal app like DTT, Command IQ, Fire Thief, Ops Hub. | Run **M** → A1 → A2 → A3 → D1 → D2 → A7 → A8. | Yes |
+
+**Cowork is the primary surface.** Most people land in Track B, C, or E and
+never need Cursor. Tracks A and D — actually building (or extending) web
+apps — are the only ones that require the editor. Don't push someone into
+Cursor unless their work needs it.
+
+**Phase M (Mothy connect) runs first for every track.** It's the one-time
+setup that gives Mothy access to your Cowork (and Cursor, if you're on
+Track A or D) so the walkthrough can read your meetings, write to the
+onboarding feedback sheet, and check in on your behalf.
 
 A person can graduate between tracks later. Beau started on a Sheets idea
 and now ships full Next.js apps. Anthony started on Apps Script and now runs
@@ -271,7 +291,85 @@ Once you've chosen, briefly tell them:
 - Roughly how long it will take.
 - That they can switch later if needed.
 
-Then go to the first phase of that track.
+Then go to **Phase M** below — every track starts there.
+
+> **CHECKPOINT:** Emit `vibe_onboard_event` via Mothy with
+> `{phase: "0", outcome: "ok", track: "<A|B|C|D|E>"}` so we can learn which
+> tracks people pick. Skip silently if Mothy isn't connected yet (that's
+> what Phase M is for).
+
+---
+
+## Phase M — Connect Mothy
+
+This runs once per person, before any track. It gives Mothy access to your
+Claude Desktop (Cowork) so the walkthrough can read your meetings, write
+progress to the onboarding feedback sheet, and bring useful context in. If
+you're heading into Cursor for Tracks A or D, we'll wire Mothy there too in
+the same step.
+
+Tell them, in one sentence: *"Mothy is your Moth+Flame teammate inside
+Claude — it knows the team, reads your meetings, and can write to our
+shared sheets. We'll connect it now so it can help you for the rest of
+this."*
+
+### M.1 — Sign in with Google to mint your Mothy token
+
+Open in their browser:
+
+  **https://mothy-mcp.vercel.app/connect**
+
+The page has one button: *Sign in with Google.* They click it, pick their
+**@mothandflamevr.com** account in the Google picker, and the page comes
+back with the connector URL.
+
+**Edge cases:**
+- If the page says *"Wrong Google account"* — they're signed in as a
+  personal Gmail in this browser. Click the "sign out and try again"
+  button on the page.
+- If the page says *"You're almost there"* (not in registry) — Mothy
+  has DM'd Rich already. Tell them to Slack Rich the pre-filled message
+  the page shows. Wait for Rich to add them, then re-open `/connect`.
+- If they're on a Track A/D path (Cursor needed) and Cursor + Claude Code
+  extension are already installed (Phase A3), skip to M.3 to use the
+  bootstrap script instead — it's cleaner than paste.
+
+### M.2 — Paste the connector URL into Claude Desktop
+
+The success page shows a URL block with a **Copy** button. They:
+1. Click **Copy**.
+2. Open the **Claude Desktop app** (the actual app, not a browser tab).
+3. Click **Settings** (the gear icon, top-right of the app).
+4. Click **Connectors** in the left sidebar.
+5. Click **Add custom connector**.
+6. Name it `Mothy`, paste the URL, click **Connect**.
+
+The `/connect` page polls Mothy and flips to **✓ Connected** as soon as
+the first MCP call lands. When they see that, Mothy is live in Cowork.
+
+> **CHECKPOINT:** Mothy is now reachable. Emit `vibe_onboard_event` with
+> `{phase: "M", outcome: "ok"}` via Mothy (the walkthrough Claude in
+> Cowork can call this directly — it has Mothy now).
+
+### M.3 — (Tracks A and D only) Wire Mothy to Cursor too
+
+Run from Cursor's Claude Code panel after Phase A3 has installed Cursor +
+the Claude Code extension:
+
+```
+node templates/setup-mothy-token.mjs
+```
+
+The script auto-opens the user's browser to the same Mothy OAuth flow,
+catches the minted token via a server-side rendezvous, and writes the
+connector URL into both `~/.cursor/mcp.json` and `~/.claude.json`. No
+paste step. No raw token printed.
+
+If `VIBE_AUTH_TIMEOUT` fires (5-minute limit), just re-run the script.
+Idempotent.
+
+CHECKPOINT: confirm Mothy responds to a test `whoami` call from inside
+Cursor's Claude Code panel. "Reply **next**…".
 
 ---
 
