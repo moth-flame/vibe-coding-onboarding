@@ -80,7 +80,8 @@ sales person to install Homebrew if their work is a deck generator.
 6. **If something fails**, stop, explain in plain English what went wrong and
    what you'll try, then continue. Never bypass a safety check to "make it
    work." If it's an account/access problem, tell them to contact
-   **Chris LoBello** (POC for GitHub / Vercel / Supabase access).
+   **Chris LoBello and Rich** (either can grant GitHub / Vercel / Supabase
+   access or answer questions).
 
 7. **If they get confused or ask to slow down**, drop into smaller steps and
    re-explain. There is no time pressure.
@@ -421,9 +422,10 @@ back to email signup if the service doesn't offer the Google button.
    **"Continue with GitHub"** is easiest. Supabase is a database + login
    system for app data.
 
-Then have them request company access. Ask them to message **Chris LoBello**
-right now (Slack/email), giving Chris **the GitHub username + the email
-they used for Vercel and Supabase**, asking to be added to:
+Then have them request company access. Ask them to message **Chris LoBello and
+Rich** right now (Slack/email) — either can grant access or answer questions —
+giving **the GitHub username + the email they used for Vercel and Supabase**,
+asking to be added to:
 - GitHub org: `moth-flame` (specify role: **Member** for full access, or
   **Developer** if they should only be able to create preview deployments,
   not promote to production — sensible default for brand-new team members)
@@ -435,9 +437,9 @@ this now means access is processing in the background while they finish
 setup. It only matters at Phase A7 (creating a repo + deploying). If access
 isn't granted by then, fall back to their personal GitHub account for the
 first app — they can transfer the repo to the org later. **Don't block on
-Chris; keep going.**
+access; keep going.**
 
-CHECKPOINT: confirm all three accounts created and Chris messaged.
+CHECKPOINT: confirm all three accounts created and Chris/Rich messaged.
 "Reply **next**…".
 
 ---
@@ -540,7 +542,7 @@ in via the browser popup when prompted.
    that they are fully set up.
 
 If a step fails, stop and explain before continuing. An account/access
-failure → point them to Chris LoBello.
+failure → point them to Chris LoBello and Rich.
 
 CHECKPOINT: confirm all four tools installed + logged in. This was the hard
 part — tell them so, and that it only happens once. "Reply **next**…".
@@ -616,7 +618,7 @@ Where to get them: the **Supabase website** → their project →
 
 Golden rule, stated clearly: if a value is called a key, token, secret, or
 service role, treat it like a password — never paste it into Slack, email,
-or a GitHub file. If one leaks, tell Chris LoBello so it can be rotated.
+or a GitHub file. If one leaks, tell Chris LoBello or Rich so it can be rotated.
 
 Reassure them: they don't manage these by hand — when a project needs keys,
 they ask you ("walk me through adding my Supabase keys") and you set up the
@@ -855,15 +857,24 @@ After they've done A1, A2, A3, you go here.
 
 ## D1 — Pick the parent repo + fork
 
-1. Ask which existing tool they want to extend. Common ones:
+1. Ask which existing tool they want to extend.
+   **Sanctioned contributor repos — self-serve, default new contributors here:**
+   - `moth-flame/opshub` (internal CRM-adjacent ops hub)
+   - `moth-flame/commandiq` (leadership scenarios, scoring / LXP)
+
+   **Other repos — admin (Rich) approval required before clone/fork/access:**
    - `command-mro` (tablet OJT, fault isolation)
-   - `command-iq` (leadership scenarios, scoring)
    - `dtt` (Beau's tablet app, hard/soft skills)
    - `fire-thief` (solution-design tool)
-   - `ops-hub` / `solutions-studio` (internal CRM-adjacent)
    - `proposal-factory` (Anthony's AI proposal generator)
-2. Open the parent repo on GitHub. Have them request access from Chris
-   LoBello if they don't already have it.
+   - `moth-flame/Mothy` and anything not listed above
+
+   Never present a non-sanctioned repo as a self-serve step. If they want one,
+   tell them to message **Rich** with a reason — do not route it through Chris.
+2. **opshub / commandiq:** request org **Member** access — reach out to
+   **Chris LoBello and Rich** for access or any questions (give your
+   `@mothandflamevr.com` email). **Any other repo:** get **Rich's** approval
+   first, then access. Open the parent repo on GitHub once you're in.
 3. Decide: **branch in the same repo** (small change, will merge back) or
    **fork to a new repo** (spin-off product). For a Beau-style hard-skills
    fork of DTT, it's a new repo so the parent app stays clean.
@@ -964,7 +975,7 @@ Mark all tasks complete. Give them a short keep-handy list.
    anyone else to review. *Don't push directly to `main`.* This is the
    guardrail that keeps "vibes-based" coding from breaking shared work.
 9. Tell Claude "pull the latest changes first" on shared repos.
-10. Account / access problems → **Chris LoBello**. Code problems → ask Claude.
+10. Account / access problems → **Chris LoBello and Rich**. Code problems → ask Claude.
 11. Start every new project by asking Claude to add the `CLAUDE.md` and
     `AGENTS.md` boilerplate.
 

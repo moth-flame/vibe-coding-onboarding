@@ -28,7 +28,7 @@ of mostly watching things install and answering simple questions.
 ## Paste this into the Claude chat
 
 ```
-Hi Claude. I'm on the Moth+Flame team and I need you to walk me through getting set up for AI-assisted work. I've pasted this into claude.ai in my browser because nothing else is installed yet. Please be patient, use plain English, and do this one step at a time — wait for me to reply "done" between each step. If I get stuck, stop and help me before moving on. Account or access issues → tell me to message Chris LoBello.
+Hi Claude. I'm on the Moth+Flame team and I need you to walk me through getting set up for AI-assisted work. I've pasted this into claude.ai in my browser because nothing else is installed yet. Please be patient, use plain English, and do this one step at a time — wait for me to reply "done" between each step. If I get stuck, stop and help me before moving on. Account or access issues → tell me to message Chris LoBello or Rich.
 
 Step 1 — Browser prep
 Confirm I'm in an incognito / private window with no extensions, signed into my @mothandflamevr.com Google account. If not, walk me through opening one. This prevents the most common signup dead-ends (stale cookies, ad blockers, CAPTCHA loops). Wait for "done."
@@ -83,5 +83,5 @@ Type `/vibe-coding-onboarding` in the Claude panel in Cursor anytime.
 
 ---
 
-**Stuck on accounts or access?** → message **Chris LoBello**.
+**Stuck on accounts or access?** → message **Chris LoBello or Rich**.
 **Stuck on anything else?** → just ask Claude, in plain English.
