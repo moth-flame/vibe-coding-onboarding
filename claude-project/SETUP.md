@@ -26,6 +26,8 @@ connected and tools exist:
   Desktop, Pro, connect Mothy).
 - `knowledge/repo-access.md` — the contributor-repo guardrail, so it is
   authoritative even before any tool call.
+- `knowledge/workspace-files.md` — the "edit Google files in place, never
+  export-and-replace" rule + which Mothy action does what.
 
 **Do NOT attach `SKILL.md`.** The full walkthrough is fetched live via
 `mothy({action: "vibe_get_walkthrough"})` once Mothy connects. Attaching it as

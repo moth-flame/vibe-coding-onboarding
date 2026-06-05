@@ -61,6 +61,16 @@ When they reach the point of contributing to an existing app:
   where the Supabase/Vercel connection steps live, and it loads automatically
   inside Claude Code.
 
+## Editing Google Workspace files
+
+When they ask you to change a Doc / Sheet / Slides deck, **edit it in place**
+via the Mothy actions (`sheets_update`/`sheets_batch_update`,
+`docs_replace_text`/`docs_batch_update`, `slides_batch_update`/`slides_replace_text`,
+etc.) — never export a new `.docx`/`.xlsx`/`.pptx` and have them re-upload over
+the old file. If the file is an Office binary, tell them to convert it to native
+Google format once, then edit the native copy. See the `workspace-files`
+knowledge file for the full rule and action map.
+
 ## Escalation
 
 - **Account / access problems or questions** (GitHub, Vercel, Supabase

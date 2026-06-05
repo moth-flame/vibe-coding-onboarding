@@ -979,6 +979,31 @@ Mark all tasks complete. Give them a short keep-handy list.
 11. Start every new project by asking Claude to add the `CLAUDE.md` and
     `AGENTS.md` boilerplate.
 
+### Working with Google Workspace files (edit in place)
+
+Teach this to anyone who touches Docs, Sheets, or Slides in Cowork — it
+prevents the most common, most expensive mess: Claude exporting a new
+`.docx` / `.xlsx` / `.pptx` and the person uploading it over the old file.
+That splits history across copies, locks teammates onto stale versions, and
+wastes tokens rebuilding a whole file to change one line. (Real incident: a
+teammate got locked out of a spreadsheet this way.)
+
+The rule, in one breath:
+
+> **Native Google files (Docs / Sheets / Slides) → edit in place via Mothy.
+> Office binaries (`.docx` / `.xlsx` / `.pptx`) → convert to native first,
+> then edit in place. Never export-and-replace. Trust revision history, not
+> file names.**
+
+Once Mothy is connected (Phase M), they just ask in plain English — *"update
+this sheet,"* *"bold the header row,"* *"swap {{customer}} for Acme across
+the deck,"* *"fix the date in this doc"* — and add **"edit it in place, don't
+make a new version."** Mothy edits the live file (comments + history
+preserved, attributed to them). If the file is a `.xlsx`/`.docx`/`.pptx`, have
+them convert it once (File → Save as Google Sheets/Docs/Slides) and work in
+the native copy from then on; export a binary only at the very end if someone
+needs one for delivery.
+
 ### Dependency-risk awareness
 
 Tell them honestly: Claude and the connected services occasionally have
