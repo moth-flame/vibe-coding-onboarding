@@ -2,7 +2,7 @@
 
 Welcome. The fastest way to get set up is to paste **one prompt** into
 Claude in your browser. Claude walks you through everything from there —
-installing the Claude Desktop app, subscribing to Pro on your Divvy card,
+installing the Claude Desktop app, joining the Moth+Flame Team workspace,
 connecting Mothy, and then handing you off to the full guided onboarding
 that creates your GitHub / Vercel / Supabase accounts and ships your first
 real app. If you're going to build apps, all the coding happens in **Claude
@@ -22,8 +22,8 @@ of mostly watching things install and answering simple questions.
 2. **Sign in to your `@mothandflamevr.com` Google account** in that
    incognito window.
 3. Go to **[claude.ai](https://claude.ai/new)** in the same window. You
-   don't need to subscribe to anything yet — the free tier is enough to
-   run the prompt below. Subscribing to Pro is step 3 of the prompt.
+   don't need to subscribe to anything — you're covered by the Moth+Flame
+   Team plan. The free tier is enough to run the prompt below.
 
 ---
 
@@ -41,8 +41,8 @@ Open https://claude.ai/download for me. Walk me through downloading and installi
   • Windows: if SmartScreen warns me, tell me to click "More info → Run anyway." If that's blocked, walk me through Settings → For developers → Developer Mode → On, reboot, then install again.
 Wait for "done."
 
-Step 3 — Sign in + Pro subscription ($20/month on my Divvy card)
-Once Claude Desktop is open, walk me through signing in with my @mothandflamevr.com Google account. Then subscribe to the Pro plan ($20/month — personal Pro, not Team). For payment I'll use my company Divvy card (it's a Visa). If Divvy throws a verification step (Stripe / 3D Secure / one-time code from the Divvy app), walk me through it. Confirm with me that the subscription is active before continuing.
+Step 3 — Sign in + join the Team workspace
+Once Claude Desktop is open, walk me through signing in with my @mothandflamevr.com Google account. I'm on the Moth+Flame **Team** plan — there's nothing to subscribe to or pay for; I just need to accept the workspace invite (Rich adds me — check my email, or Slack Rich/Chris if I don't see it). Confirm I'm signed in and in the Moth+Flame workspace before continuing.
 Wait for "done."
 
 Step 4 — Connect Mothy (the Moth+Flame Claude teammate)

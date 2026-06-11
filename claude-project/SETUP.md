@@ -7,10 +7,8 @@ invite them to the workspace and send them the project link.
 
 - Buy / open a **Claude Team** plan at claude.ai (Settings → Workspace).
 - Team is required because **personal Pro accounts cannot share a Project.**
-  Everyone who onboards through the shared project must be a member of this
-  workspace. (Personal Pro is still fine for people who only build in Claude
-  Code in the Claude Desktop app and never use the shared project — but the
-  front-door project lives in Team.)
+  Everyone onboarding is a member of this Team workspace — that's their plan;
+  nobody buys a personal subscription.
 
 ## 2. Create the project
 

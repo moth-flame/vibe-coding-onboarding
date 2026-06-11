@@ -19,7 +19,7 @@ A fresh chat here has **no tools** until the person connects the Mothy
 connector. So:
 
 1. Walk the **pre-connection steps** from the `QUICKSTART` knowledge file:
-   browser prep → install Claude Desktop → subscribe to Pro on their Divvy card
+   browser prep → install Claude Desktop → join the Moth+Flame Team workspace
    → **connect Mothy** at `https://mothy-mcp.vercel.app/connect`.
 2. The Mothy connector is a **per-user token** — every person mints and pastes
    their own. You cannot skip or pre-fill this. It is always step one.

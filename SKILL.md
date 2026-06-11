@@ -772,14 +772,14 @@ plans and research-heavy tasks). Both have skills + connectors. Pick the
 one that matches how they actually work — don't force the desktop install
 on someone who lives in browser tabs.
 
-## C1 — Install Claude Desktop + Pro plan
+## C1 — Install Claude Desktop + join the Team workspace
 
 1. Open `https://claude.ai/download` and walk them through installing the
    **Claude Desktop** app for their OS.
-2. **Pro plan**: have them subscribe with the **Divvy card** (monthly
-   billing on the company card; Max plan if they expect heavy daily use —
-   ask about volume before deciding).
-3. **Sign in** with their **`@mothandflamevr.com`** Google account.
+2. **Sign in** with their **`@mothandflamevr.com`** Google account.
+3. **Team plan**: they're a member of the Moth+Flame **Team** workspace —
+   nothing to subscribe to or pay for. They just accept the workspace invite
+   (Rich adds them; check email, or Slack Rich/Chris if it's not there).
 4. **Windows-only:** the app sometimes triggers SmartScreen warnings.
    Walk them through **Settings → Developer mode** to bypass it. Reassure
    them this is expected — Anthropic ships fast, signing certs lag.
