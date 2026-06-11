@@ -326,39 +326,46 @@ Claude — it knows the team, reads your meetings, and can write to our
 shared sheets. We'll connect it now so it can help you for the rest of
 this."*
 
-### M.1 — Sign in with Google to mint your Mothy token
+### M.1 — Click Connect on the Mothy connector (already in the list)
 
-Open in their browser:
+Mothy is published as an **org connector** — it's already in everyone's
+connector list. There is no token to mint and nothing to paste. They:
 
-  **https://mothy-mcp.vercel.app/connect**
+1. Open the **Claude Desktop app** (the actual app, not a browser tab).
+2. Click **Customize** (top-left) → **Connectors**.
+3. Find **Mothy** in the list → click **Connect**.
+4. Sign in with their **@mothandflamevr.com** Google account in the picker.
 
-The page has one button: *Sign in with Google.* They click it, pick their
-**@mothandflamevr.com** account in the Google picker, and the page comes
-back with the connector URL.
+That's the whole connection. No URL, no "Add custom connector", no token.
 
 **Edge cases:**
-- If the page says *"Wrong Google account"* — they're signed in as a
-  personal Gmail in this browser. Click the "sign out and try again"
-  button on the page.
-- If the page says *"You're almost there"* (not in registry) — Mothy
-  has DM'd Rich already. Tell them to Slack Rich the pre-filled message
-  the page shows. Wait for Rich to add them, then re-open `/connect`.
+- *Wrong Google account* — they're signed into a personal Gmail in this
+  browser. Sign out of Google in the browser, then click **Connect** again.
+- *Not in registry / "You're almost there"* — Mothy has DM'd Rich already.
+  Tell them to Slack Rich the pre-filled message. Wait for Rich to add
+  them, then click **Connect** again.
+- **Mothy is NOT in the connector list** (fallback only — org connector not
+  yet provisioned for them): open **https://mothy-mcp.vercel.app/connect**
+  in their browser, *Sign in with Google*, **Copy** the connector URL it
+  returns, then in Claude Desktop **Settings → Connectors → Add custom
+  connector**, name it `Mothy`, paste the URL, **Connect**.
 
-### M.2 — Paste the connector URL into Claude Desktop
+### M.2 — Flip the Mothy tools to "Always allow" (the step everyone misses)
 
-The success page shows a URL block with a **Copy** button. They:
-1. Click **Copy**.
-2. Open the **Claude Desktop app** (the actual app, not a browser tab).
-3. Click **Settings** (the gear icon, top-right of the app).
-4. Click **Connectors** in the left sidebar.
-5. Click **Add custom connector**.
-6. Name it `Mothy`, paste the URL, click **Connect**.
+Without this, every Mothy action stops and waits for a manual "approve"
+click. Do it once now:
 
-The `/connect` page polls Mothy and flips to **✓ Connected** as soon as
-the first MCP call lands. When they see that, Mothy is live in the Claude
-Desktop app — and that means it's live everywhere in that app: their Cowork
-chat now, and Claude Code later for Tracks A and D. **Mothy setup is done;
-there is nothing to wire into a separate editor.**
+1. Stay in **Customize → Connectors**. Click **Mothy** (the one showing
+   `https://mothy-mcp.vercel.app/mcp`).
+2. On the right, find the **Tool permissions** dropdown at the top-right
+   that says **"Needs approval"** (next to **Other tools**).
+3. Click it → choose **✓ Always allow**. That flips all Mothy tools at
+   once. If any single row still shows a ✋ (hand), click the **✓** on it.
+
+Done right, every Mothy tool reads **Always allow / ✓** — no hands, no
+"needs approval." Mothy is now live everywhere in the Claude Desktop app:
+their Cowork chat now, and Claude Code later for Tracks A and D. **Setup
+is done; there is nothing to wire into a separate editor.**
 
 > **CHECKPOINT:** Mothy is now reachable. Emit `vibe_onboard_event` with
 > `{phase: "M", outcome: "ok"}` via Mothy (the walkthrough Claude in
