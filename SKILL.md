@@ -3,9 +3,10 @@ name: vibe-coding-onboarding
 description: >-
   Interactive, step-by-step walkthrough that gets a Moth+Flame team member
   building with Claude — whether that means full app development ("vibe
-  coding") in Cursor, automating their job in Google Sheets, generating
-  tailored sales decks in Claude Desktop, forking an existing internal tool,
-  or turning a domain expert's playbook into a decision-tree tablet app.
+  coding") in Claude Code inside the Claude Desktop app, automating their job
+  in Google Sheets, generating tailored sales decks in Cowork (the Claude
+  Desktop chat), forking an existing internal tool, or turning a domain
+  expert's playbook into a decision-tree tablet app.
   Works for brand-new hires AND long-tenured people who just haven't been
   set up yet (Jason / Ed / Aaron pattern). It picks the right track based on
   what the person actually needs to ship, sets up the right accounts and
@@ -54,6 +55,14 @@ Pick the track that matches what they actually need to ship. Don't force a
 sales person to install Homebrew if their work is a deck generator.
 
 ## How to run this walkthrough — read before starting
+
+**Where this runs.** Everything happens inside the **Claude Desktop app**.
+For the non-code tracks (B Sheets, C decks/briefs, E decision trees) you're
+running in **Cowork** — the Claude Desktop chat. For building apps (Tracks A
+and D) you're running as **Claude Code inside that same Claude Desktop app** —
+the coding surface. There is no separate editor to install, and because Mothy
+is connected to Claude Desktop, Claude Code already has it. You, Claude, do
+the technical work; the person mostly answers questions and approves.
 
 1. **Go one phase at a time.** At the end of every phase, STOP. Give a short
    plain-English summary of what just happened, then say exactly:
@@ -155,10 +164,11 @@ Ask in plain English — don't take "no" / "I don't know" at face value, ask
 them to look:
 
 - *"Are you already vibe coding somewhere — in the terminal, in claude.ai
-  in a browser tab, in Cursor, in VS Code, or the Claude Desktop app?"*
+  in a browser tab, in Claude Code, or the Claude Desktop app?"*
   Some people (Jason, Dan, Chris) are already productive in terminal +
-  browser chat; **don't bulldoze them into Cursor** if they don't want it.
-  Offer it as the cleaner UI, but respect the existing flow.
+  browser chat; **don't bulldoze them into the desktop app** if they're
+  happy where they are. Offer it as the cleaner home, but respect the
+  existing flow.
 - *"Do you already have a GitHub account?"* — and then have them check, in
   their browser, what email it's under. Jason swore he didn't have one;
   he did, on his personal Gmail, plus a phantom one Claude had created in
@@ -246,7 +256,7 @@ Some roles will never need Track A and that's the right answer:
 - Account executives, contracts leads, and exec staff often live happily
   in Track C forever. Nick + Ed are the canonical examples.
 - Domain experts whose expertise is captured in one decision tree may
-  ship Track E once and never touch the editor again.
+  ship Track E once and never build again.
 
 Don't treat "stays in Track C" as a failure mode. The Q2 rock is "everyone
 builds one work-related app this quarter" — but the spirit of that rock
@@ -265,23 +275,24 @@ else?"*
 
 Wait for their confirmation. Then go to the first phase of that track.
 
-| Track | They want to… | Phases to run | Cursor needed? |
+| Track | They want to… | Phases to run | Where it runs |
 |---|---|---|---|
-| **C. Claude Desktop power user** (default for most) | Generate decks, summaries, drafts, briefing notes; talk to their own files. | Run **M** → C1 → C2 → C3. | No |
-| **B. Sheets + Apps Script automation** | Automate something inside Google Sheets / Gmail (kanban, trackers, scrapers, weekly imports). | Run **M** → A1 (accounts) lite → B1 → B2 → B3. | No |
-| **E. Domain-expert decision tree** | Encode their expertise as a quiz / fault-isolation / checklist tablet app. | Run **M** → A1 → A2 → A3 → E1 → A7 → A8. | Yes |
-| **A. Build & deploy web apps** | Build new apps end-to-end, live on a URL. Multiple projects expected. | Run **M** → A1 → A8. The classic "vibe coding" path. | Yes |
-| **D. Fork an existing Moth+Flame tool** | Add to / spin off from an internal app like DTT, Command IQ, Fire Thief, Ops Hub. | Run **M** → A1 → A2 → A3 → D1 → D2 → A7 → A8. | Yes |
+| **C. Claude Desktop power user** (default for most) | Generate decks, summaries, drafts, briefing notes; talk to their own files. | Run **M** → C1 → C2 → C3. | Cowork chat |
+| **B. Sheets + Apps Script automation** | Automate something inside Google Sheets / Gmail (kanban, trackers, scrapers, weekly imports). | Run **M** → A1 (accounts) lite → B1 → B2 → B3. | Cowork chat |
+| **E. Domain-expert decision tree** | Encode their expertise as a quiz / fault-isolation / checklist tablet app. | Run **M** → A1 → A2 → A3 → E1 → A7 → A8. | Claude Code (in the desktop app) |
+| **A. Build & deploy web apps** | Build new apps end-to-end, live on a URL. Multiple projects expected. | Run **M** → A1 → A8. The classic "vibe coding" path. | Claude Code (in the desktop app) |
+| **D. Fork an existing Moth+Flame tool** | Add to / spin off from an internal app like DTT, Command IQ, Fire Thief, Ops Hub. | Run **M** → A1 → A2 → A3 → D1 → D2 → A7 → A8. | Claude Code (in the desktop app) |
 
-**Cowork is the primary surface.** Most people land in Track B, C, or E and
-never need Cursor. Tracks A and D — actually building (or extending) web
-apps — are the only ones that require the editor. Don't push someone into
-Cursor unless their work needs it.
+**It all lives in the Claude Desktop app.** Most people land in Track B, C, or
+E and run the whole thing right in their **Cowork** chat. Tracks A and D —
+actually building (or extending) web apps — run in **Claude Code inside that
+same desktop app** — no separate editor, and Mothy carries over automatically.
 
 **Phase M (Mothy connect) runs first for every track.** It's the one-time
-setup that gives Mothy access to your Cowork (and Cursor, if you're on
-Track A or D) so the walkthrough can read your meetings, write to the
-onboarding feedback sheet, and check in on your behalf.
+setup that connects Mothy to your Claude Desktop app so the walkthrough can
+read your meetings, write to the onboarding feedback sheet, and check in on
+your behalf. Once it's connected to the desktop app, both Cowork and Claude
+Code have it.
 
 A person can graduate between tracks later. Beau started on a Sheets idea
 and now ships full Next.js apps. Anthony started on Apps Script and now runs
@@ -303,11 +314,12 @@ Then go to **Phase M** below — every track starts there.
 
 ## Phase M — Connect Mothy
 
-This runs once per person, before any track. It gives Mothy access to your
-Claude Desktop (Cowork) so the walkthrough can read your meetings, write
-progress to the onboarding feedback sheet, and bring useful context in. If
-you're heading into Cursor for Tracks A or D, we'll wire Mothy there too in
-the same step.
+This runs once per person, before any track. It connects Mothy to your
+Claude Desktop app so the walkthrough can read your meetings, write progress
+to the onboarding feedback sheet, and bring useful context in. This is the
+*whole* Mothy setup: once it's connected to the desktop app, both your Cowork
+chat and Claude Code (for Tracks A and D) have it automatically — there's
+nothing else to wire up.
 
 Tell them, in one sentence: *"Mothy is your Moth+Flame teammate inside
 Claude — it knows the team, reads your meetings, and can write to our
@@ -331,9 +343,6 @@ back with the connector URL.
 - If the page says *"You're almost there"* (not in registry) — Mothy
   has DM'd Rich already. Tell them to Slack Rich the pre-filled message
   the page shows. Wait for Rich to add them, then re-open `/connect`.
-- If they're on a Track A/D path (Cursor needed) and Cursor + Claude Code
-  extension are already installed (Phase A3), skip to M.3 to use the
-  bootstrap script instead — it's cleaner than paste.
 
 ### M.2 — Paste the connector URL into Claude Desktop
 
@@ -346,31 +355,14 @@ The success page shows a URL block with a **Copy** button. They:
 6. Name it `Mothy`, paste the URL, click **Connect**.
 
 The `/connect` page polls Mothy and flips to **✓ Connected** as soon as
-the first MCP call lands. When they see that, Mothy is live in Cowork.
+the first MCP call lands. When they see that, Mothy is live in the Claude
+Desktop app — and that means it's live everywhere in that app: their Cowork
+chat now, and Claude Code later for Tracks A and D. **Mothy setup is done;
+there is nothing to wire into a separate editor.**
 
 > **CHECKPOINT:** Mothy is now reachable. Emit `vibe_onboard_event` with
 > `{phase: "M", outcome: "ok"}` via Mothy (the walkthrough Claude in
 > Cowork can call this directly — it has Mothy now).
-
-### M.3 — (Tracks A and D only) Wire Mothy to Cursor too
-
-Run from Cursor's Claude Code panel after Phase A3 has installed Cursor +
-the Claude Code extension:
-
-```
-node templates/setup-mothy-token.mjs
-```
-
-The script auto-opens the user's browser to the same Mothy OAuth flow,
-catches the minted token via a server-side rendezvous, and writes the
-connector URL into both `~/.cursor/mcp.json` and `~/.claude.json`. No
-paste step. No raw token printed.
-
-If `VIBE_AUTH_TIMEOUT` fires (5-minute limit), just re-run the script.
-Idempotent.
-
-CHECKPOINT: confirm Mothy responds to a test `whoami` call from inside
-Cursor's Claude Code panel. "Reply **next**…".
 
 ---
 
@@ -383,9 +375,11 @@ free tools connected, learn a simple build-see-adjust loop, and build a real
 app that ends up on a live website — and they won't need to understand code,
 just describe what they want.
 
-They already have a paid **Claude** account (that's what's running you).
-Cursor may or may not be installed — we'll handle that in A3. Now help them
-create the three other accounts.
+They already have a paid **Claude** account (that's what's running you), and
+the building happens right here in **Claude Code inside the Claude Desktop
+app** — there's no separate editor to install. We'll just check the
+command-line basics (git, node) in A3. Now help them create the three other
+accounts.
 
 **Pre-flight reminder (skip if they already did it):** they should be in an
 **incognito / private window with no extensions**, signed into their
@@ -446,15 +440,12 @@ CHECKPOINT: confirm all three accounts created and Chris/Rich messaged.
 
 ## A2 — Orientation: the tools and the loop
 
-Briefly explain the five pieces and how they fit, in plain language:
+Briefly explain the four pieces and how they fit, in plain language:
 
-- **Cursor** *or* **VS Code with the Claude extension** — the editor
-  window all the work happens in. Cursor adds nicer AI-review features;
-  VS Code is leaner and what Chris uses. Either is fine — pick whichever
-  they already have or prefer. If they're equally new to both, default to
-  Cursor.
-- **The Claude extension** — you, the AI that writes the code, living in a
-  chat panel on the side of the editor.
+- **Claude Code (in the Claude Desktop app)** — this is where all the
+  building happens. It's you — the AI that writes the code — with a built-in
+  terminal and the ability to edit files, right inside the desktop app they
+  already have. No separate editor to install.
 - **GitHub** — online storage for the project's files (like Drive, for code).
 - **Vercel** — publishes the app to a real public website.
 - **Supabase** — a database + login system, where an app stores its data.
@@ -464,65 +455,59 @@ Then explain the core loop they'll repeat forever:
 GitHub → Vercel publishes it to a live website automatically.*
 
 Reassure them: this isn't "coding" in the scary sense — they're chatting
-with you in a panel on the side of the editor, the same as texting. If they
-can write an email, they can do this.
+with you, the same as texting, and you do the actual work. If they can write
+an email, they can do this.
 
 **If they're already productive in terminal + browser claude.ai** (like
-Jason): tell them they don't *have* to move into Cursor. The browser chat
-is great for implementation plans and web-research-heavy tasks; terminal
-is great when they like seeing the raw command output. Cursor's value is
-that it puts the file edits, the dev server, and the chat in one window
-— most useful once they're building real apps with several files. Offer
-Cursor as the upgrade, don't force it.
+Jason): tell them they don't *have* to switch to Claude Code in the desktop
+app. The browser chat is great for implementation plans and web-research-
+heavy tasks; terminal is great when they like seeing the raw command output.
+Claude Code in the desktop app's value is that it puts the file edits, the
+dev server, and the chat in one place — most useful once they're building
+real apps with several files. Offer it as the upgrade, don't force it.
 
 **Story to share:** Rich himself spent hours stuck copy-pasting SSH commands
-from Claude into Terminal until Beau told him to switch to Cursor — and the
-whole pipeline (Cursor → GitHub → Vercel auto-deploy) clicked into place in
-one session. That switch is what made everything after possible.
+from Claude into Terminal until Beau told him to let Claude Code drive the
+whole thing — and the whole pipeline (Claude Code → GitHub → Vercel
+auto-deploy) clicked into place in one session. Letting Claude Code do the
+work is what made everything after possible.
 
 CHECKPOINT: "Reply **next**…".
 
 ---
 
-## A3 — Install & authenticate the developer tools
+## A3 — Check & authenticate the developer tools
 
-This is the one technical phase. YOU do all of it. Explain each step simply
-as you go, and pause for browser logins.
-
-### Editor first (Cursor or VS Code)
-
-If they don't have an editor yet, install one. Default to **Cursor**
-(`https://cursor.com`); fall back to **VS Code** (`https://code.visualstudio.com`)
-if they prefer leaner or are already a VS Code user. Both work with the
-Claude extension.
-
-Watch out for the **Cursor signup flow** — it pushes a paid Pro / team plan
-hard. Tell them clearly: **skip every screen asking for a credit card or
-"start team trial."** The free tier is fine to start. Click "skip" / "use
-without account" wherever offered. Same for VS Code — no payment needed.
-
-Install the **Claude / Claude Code** extension inside the editor (Extensions
-panel → search "Claude Code" → published by **Anthropic** → Install). Sign
-in via the browser popup when prompted.
+This is the one technical phase. YOU do all of it from inside Claude Code in
+the Claude Desktop app. There is **no editor to install** — Claude Code is
+already the build surface, and Mothy already carried over from the desktop
+app. All that's left is making sure a couple of command-line basics are
+present, and logging in to GitHub / Vercel / Supabase. Explain each step
+simply as you go, and pause for browser logins.
 
 ### Command-line tools
 
 ### Mac path
 
+You, Claude Code, run these yourself in your terminal — the person doesn't
+type anything. Install whatever's missing for them.
+
 1. Check whether **Homebrew** is installed (`brew --version`). If not,
-   install it.
+   install it for them.
 2. Use Homebrew to install **Node.js**, the **GitHub CLI** (`gh`), and the
-   **Supabase CLI**.
+   **Supabase CLI** — only the ones not already present.
 3. Install the **Vercel CLI** globally with npm (`npm install -g vercel`).
 4. Verify all four by checking versions: `node --version`, `gh --version`,
    `vercel --version`, `supabase --version`. Show the results.
 
 ### Windows path
 
+You, Claude Code, run these yourself — the person doesn't type anything.
+
 1. Check whether **winget** is available (it ships with Windows 11). Install
    **Node.js** (`winget install OpenJS.NodeJS.LTS`), **GitHub CLI**
    (`winget install GitHub.cli`), and **Supabase CLI**
-   (`winget install Supabase.cli`).
+   (`winget install Supabase.cli`) — whatever's missing.
 2. Install the **Vercel CLI** with `npm install -g vercel` in **PowerShell**.
 3. Verify versions the same way.
 4. If Windows SmartScreen blocks anything, walk them through clicking
@@ -552,9 +537,9 @@ part — tell them so, and that it only happens once. "Reply **next**…".
 ## A4 — Teach "auto mode" (Shift + Tab)
 
 Explain permission modes. Claude asks before edits/commands by default —
-safe but slow. With the cursor clicked into the Claude panel's message box,
-**Shift + Tab** (pressed together) cycles modes; a label near the message
-box shows the current one:
+safe but slow. With their typing focus clicked into the Claude Code message
+box, **Shift + Tab** (pressed together) cycles modes; a label near the
+message box shows the current one:
 
 - **Normal** — asks before every edit/command. Use when nervous or risky.
 - **Auto-Accept Edits** ("auto mode") — edits files and runs safe commands
@@ -563,10 +548,10 @@ box shows the current one:
   Good for big features.
 
 Tell them clearly: it's **Shift + Tab**, NOT Cmd + Tab (Cmd + Tab switches
-Mac apps; Alt + Tab on Windows). Ask them to click into the Claude panel and
-press Shift + Tab now until it reads "Auto-Accept Edits", and to remember
-**Esc** interrupts you anytime. Note they'll still be asked before truly
-risky things (like publishing to production) — that's intentional.
+Mac apps; Alt + Tab on Windows). Ask them to click into the Claude Code
+message box and press Shift + Tab now until it reads "Auto-Accept Edits", and
+to remember **Esc** interrupts you anytime. Note they'll still be asked before
+truly risky things (like publishing to production) — that's intentional.
 
 CHECKPOINT: confirm they found auto mode. "Reply **next**…".
 
@@ -740,8 +725,8 @@ into a Google Sheet) and Aaron's FedEx shipping tracker are the references.
 ## B2 — Write the first job
 
 Have them tell you one job. Draft an Apps Script function for it inside the
-Apps Script editor (you can dictate what to paste, or have them grant the
-Cursor → Sheets workflow if they prefer). Common patterns:
+Apps Script editor (you can dictate what to paste, or write it directly if
+they prefer). Common patterns:
 
 - **Daily scrape of email/Slack into a sheet** (Anthony's pattern). Use
   `GmailApp.search()` for emails; Slack would be a webhook or paste-from-
@@ -1021,18 +1006,19 @@ Max. Don't pre-buy capacity; let usage tell the story.
 
 ### Quick reference
 
-- Talk to the AI: click the Claude icon in Cursor's sidebar (Track A/D/E) /
-  open Claude Desktop (Track C) / open the Apps Script editor (Track B).
-- Auto mode: **Shift + Tab** until "Auto-Accept Edits" (Cursor / Claude
-  Desktop).
+- Talk to the AI: open Claude Code in the Claude Desktop app (Track A/D/E) /
+  open your Cowork chat in the Claude Desktop app (Track C) / open the Apps
+  Script editor (Track B).
+- Auto mode: **Shift + Tab** until "Auto-Accept Edits" (Claude Code in the
+  desktop app).
 - See the app: Cmd-click (Ctrl-click on Windows) the `http://localhost:...`
   link.
 - Save work: tell Claude "commit this."
 - Publish: save to GitHub, then import the repo at vercel.com (one time).
 - Supabase keys: Supabase site → Project → Settings → API.
 - Cowork connectors: Settings → Connectors → Browse Plugins.
-- Re-run this walkthrough: type `/vibe-coding-onboarding` in the Claude
-  panel anytime.
+- Re-run this walkthrough: type `/vibe-coding-onboarding` in Claude Code (in
+  the desktop app) anytime.
 
 ### If they want to graduate tracks
 

@@ -3,9 +3,11 @@
 Welcome. The fastest way to get set up is to paste **one prompt** into
 Claude in your browser. Claude walks you through everything from there —
 installing the Claude Desktop app, subscribing to Pro on your Divvy card,
-installing Cursor + the Claude Code extension, and then handing you off to
-the full guided onboarding that creates your GitHub / Vercel / Supabase
-accounts and ships your first real app.
+connecting Mothy, and then handing you off to the full guided onboarding
+that creates your GitHub / Vercel / Supabase accounts and ships your first
+real app. If you're going to build apps, all the coding happens in **Claude
+Code right inside the Claude Desktop app** — there's no separate editor to
+install.
 
 Total effort: about 5 minutes of your active attention, then ~45 minutes
 of mostly watching things install and answering simple questions.
@@ -56,20 +58,13 @@ If the page says "Wrong Google account": I'm signed in as a personal Gmail. Clic
 If the page says "You're almost there" (not in registry): Mothy DM'd Rich already. Slack Rich the pre-filled message the page shows, wait for him to add me, then reopen /connect.
 Wait for "done."
 
-Step 5 — (Only if I'll build apps) Install Cursor + the Claude Code extension
-Open https://cursor.com for me. Walk me through downloading Cursor for my OS and installing it. Tell me clearly to SKIP every prompt asking for a credit card or "Start team trial" — the free tier is fine. Once Cursor opens, walk me through:
-  (a) Open the Extensions panel (Cmd+Shift+X on Mac, Ctrl+Shift+X on Windows)
-  (b) Search "Claude Code" — install the one published by Anthropic
-  (c) Click the Claude icon that appears in the left sidebar and sign in via the browser popup with my Moth+Flame Google account
-Wait for "done."
+Step 5 — Hand off to the full walkthrough
+Ask me one question first: "Do you know yet whether you want to build apps, automate a Google Sheet, generate decks, or capture your expertise as a decision tree?" If I clearly don't need to build apps (decks, summaries, briefs, Sheets automation) → tell me I can run the rest of the walkthrough right here in this Cowork chat, and start Phase 0 of SKILL.md now. If I want to build apps OR I'm not sure → tell me to open **Claude Code inside the Claude Desktop app** (it's already there — same app, the coding surface) and paste the builder handoff prompt below into it. Mothy is already connected to Claude Desktop, so Claude Code inherits it automatically — there's nothing extra to wire up.
 
-Step 6 — Hand off to the full walkthrough
-Ask me one question first: "Do you know yet whether you want to build apps, automate a Google Sheet, generate decks, or capture your expertise as a decision tree?" If I say apps OR I'm not sure → I need Cursor (Step 5 above) and you give me the Cursor handoff prompt below. If I clearly don't need apps (decks, summaries, briefs, Sheets automation) → skip Cursor, tell me I can run the rest of the walkthrough right here in Claude Desktop chat, and start Phase 0 of SKILL.md now.
+If I'm building, give me this prompt to paste into Claude Code in the Claude Desktop app:
 
-If Cursor is needed, give me this prompt to paste into Cursor's Claude Code panel:
-
----PASTE THIS INTO CURSOR'S CLAUDE PANEL---
-Please clone https://github.com/moth-flame/vibe-coding-onboarding into a folder on my computer. Then open the SKILL.md file inside it and follow it step by step — it's an interactive walkthrough that sets me up for AI-assisted work at Moth+Flame. Mothy is already connected to Claude Desktop; before any other phase, run `node templates/setup-mothy-token.mjs` to wire Mothy into Cursor too. Also copy the cloned folder into ~/.claude/skills/vibe-coding-onboarding so I can re-run it later by typing /vibe-coding-onboarding. Start the walkthrough now.
+---PASTE THIS INTO CLAUDE CODE (IN THE CLAUDE DESKTOP APP)---
+You're Claude Code, running inside my Claude Desktop app. I'm on the Moth+Flame team and just finished basic setup. Please do the legwork for me — I'm non-technical and will mostly just answer questions and approve things. First, clone https://github.com/moth-flame/vibe-coding-onboarding into a folder on my computer. Then open SKILL.md inside it and follow it step by step — it's an interactive walkthrough that sets me up for AI-assisted work at Moth+Flame and ships my first real app. Mothy is already connected to this desktop app, so you already have it — no token setup needed. Also copy the cloned folder into ~/.claude/skills/vibe-coding-onboarding so I can re-run it later by typing /vibe-coding-onboarding. Start the walkthrough now.
 ---
 ```
 
@@ -79,7 +74,9 @@ That's it. Claude takes over and walks you through the rest.
 
 ## If you ever want to re-run the walkthrough
 
-Type `/vibe-coding-onboarding` in the Claude panel in Cursor anytime.
+Type `/vibe-coding-onboarding` in Claude Code (in the Claude Desktop app)
+anytime. If you only run the non-code tracks, just ask for the walkthrough
+again in your Cowork chat.
 
 ---
 

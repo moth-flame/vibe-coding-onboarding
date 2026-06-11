@@ -8,8 +8,9 @@ invite them to the workspace and send them the project link.
 - Buy / open a **Claude Team** plan at claude.ai (Settings → Workspace).
 - Team is required because **personal Pro accounts cannot share a Project.**
   Everyone who onboards through the shared project must be a member of this
-  workspace. (Personal Pro is still fine for people who only code in Cursor and
-  never use the shared project — but the front-door project lives in Team.)
+  workspace. (Personal Pro is still fine for people who only build in Claude
+  Code in the Claude Desktop app and never use the shared project — but the
+  front-door project lives in Team.)
 
 ## 2. Create the project
 
@@ -44,9 +45,10 @@ knowledge guarantees it drifts from the GitHub source.
 - **The Mothy connector** is still per-user — each person mints their own token
   at `/connect`. The project seeds instructions + knowledge, never the token.
 - **Per-repo `CLAUDE.md`** in opshub / commandiq is still where the
-  Supabase/Vercel wiring lives. Claude Code reads those automatically inside
-  Cursor; the shared project does not follow them into the editor, and that is
-  fine — it is the front door, not the coding context.
+  Supabase/Vercel wiring lives. Claude Code reads those automatically when the
+  repo is open in the Claude Desktop app; the shared project does not follow
+  them into Claude Code, and that is fine — it is the front door, not the
+  coding context.
 
 ## Keeping it current
 
